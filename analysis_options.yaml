@@ -1,0 +1,19 @@
+include: package:lints/recommended.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: false
+
+linter:
+  rules:
+    public_member_api_docs: false
+    use_key_in_widget_constructors: true
+    avoid_field_initializers_in_const_classes: true
+    avoid_unused_constructor_parameters: true
+    exhaustive_cases: true
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    sort_constructors_first: true
+    sort_unnamed_constructors_first: true
+
