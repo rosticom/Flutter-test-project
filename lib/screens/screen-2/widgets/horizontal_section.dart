@@ -5,17 +5,17 @@ import 'package:provider/provider.dart';
 import 'package:test_prj/providers/horizontal_items.dart';
 import 'package:test_prj/screens/screen-2/widgets/section_item.dart';
 
-class HorizontalScrolling extends StatefulWidget {
-  HorizontalScrolling(
+class HorizontalSection extends StatefulWidget {
+  HorizontalSection(
     this.itemsList, 
     {Key? key}) : super(key: key);
   final List<String> itemsList;
 
   @override
-  State<HorizontalScrolling> createState() => _HorizontalScrollingState();
+  State<HorizontalSection> createState() => _HorizontalSectionState();
 }
 
-class _HorizontalScrollingState extends State<HorizontalScrolling> {
+class _HorizontalSectionState extends State<HorizontalSection> {
   final CarouselController _controller = CarouselController();
   
   final List<String> _horisontalItems = ['1', '2'];
@@ -73,8 +73,8 @@ class _HorizontalScrollingState extends State<HorizontalScrolling> {
 
   void _horisontalItemsNumberUpdate(int _pageId) {
     Provider.of<HorizontalItemsProvider>(context, listen: false).generateItemAt(_pageId); 
-    _horisontalItems[_pageId] = Provider.of<HorizontalItemsProvider>(context, listen: false)
-      .itemAt(_pageId)!
-      .replaceAll(RegExp(r'[^0-9]'),'');
+    String horisontalItem = '0';
+    horisontalItem = Provider.of<HorizontalItemsProvider>(context, listen: false).itemAt(_pageId)!;
+    _horisontalItems[_pageId] = horisontalItem.replaceAll(RegExp(r'[^0-9]'),'');
   }
 }

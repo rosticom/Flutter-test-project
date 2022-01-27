@@ -8,18 +8,18 @@ import 'package:test_prj/screens/screen-2/widgets/section_item.dart';
 import 'package:test_prj/screens/screen-2/widgets/section_text.dart';
 import 'package:test_prj/screens/widgets/close_button.dart';
 
-class VerticalScrolling extends StatefulWidget {
-  VerticalScrolling(
+class VerticalSection extends StatefulWidget {
+  VerticalSection(
     this.horisontalItemList, 
     {Key? key}) : super(key: key);
   final List<String> horisontalItemList;
   
 
   @override
-  State<VerticalScrolling> createState() => _VerticalScrollingState();
+  State<VerticalSection> createState() => _VerticalSectionState();
 }
 
-class _VerticalScrollingState extends State<VerticalScrolling> {
+class _VerticalSectionState extends State<VerticalSection> {
   final List<String> _itemsList = ['0', '1', '2', '3', '4', '5', '6'];
   int _lengthHorisontalItems = 0;
   int _lengthVerticalItems = 0;
@@ -55,7 +55,7 @@ class _VerticalScrollingState extends State<VerticalScrolling> {
                     children: [
                       sectionText("Section 1 ($_lengthHorisontalItems)", false),
                       const SizedBox(height: 8),
-                      HorizontalScrolling(widget.horisontalItemList) 
+                      HorizontalSection(widget.horisontalItemList) 
                 ])
                 : item=='2' 
                 ? Column(

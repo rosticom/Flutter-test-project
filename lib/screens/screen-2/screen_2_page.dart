@@ -34,7 +34,7 @@ class _Screen2State extends State<Screen2> {
       color: ProjectColor.backgroundSecondScreen,
       child: Stack(
         children: [
-          VerticalScrolling(_itemsHorisontalList),
+          VerticalSection(_itemsHorisontalList),
         ],
     ))));
 }
